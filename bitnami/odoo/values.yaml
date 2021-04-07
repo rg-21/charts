@@ -106,18 +106,17 @@ extraVolumeMounts: []
 ## User of the application
 ## ref: https://github.com/bitnami/bitnami-docker-odoo#configuration
 ##
-odooUsername: user@example.com
-
+odooUsername: devops1@rg1.us
 ## Admin email
 ## ref: https://github.com/bitnami/bitnami-docker-odoo#configuration
 ##
-odooEmail: user@example.com
+odooEmail: devops1@rg1.us
 
 ## Application password
 ## Defaults to a random 10-character alphanumeric string if not set
 ## ref: https://github.com/bitnami/bitnami-docker-odoo#configuration
 ##
-# odooPassword:
+odooPassword: Devops123!!
 
 ## Odoo modules disable demo data
 ## ref: https://github.com/bitnami/bitnami-docker-odoo#configuration
@@ -140,15 +139,15 @@ externalDatabase:
   ## All of these values are only used when postgresql.enabled is set to false
   ## Database host
   ##
-  host: localhost
+  host: 10.59.178.3
 
   ## non-root Username for Odoo database
   ##
-  user: postgres
+  user: odoo
 
   ## Database password
   ##
-  password: ""
+  password: "odoo"
 
   ## Database port number
   ##
@@ -160,7 +159,7 @@ externalDatabase:
 ## https://github.com/bitnami/charts/blob/master/bitnami/postgresql/values.yaml
 ##
 postgresql:
-  enabled: true
+  enabled: false
   ## PostgreSQL password
   ## ref: https://hub.docker.com/_/postgres/
   ##
