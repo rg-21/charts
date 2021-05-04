@@ -19,7 +19,7 @@ steps:
     arguments:
       image_name: bitnami/odoo
       tag: '${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
-      dockerfile: Dockerfile
+      dockerfile: bitnami/odoo
     stage: package
   deploy:
     title: Storing Helm chart
