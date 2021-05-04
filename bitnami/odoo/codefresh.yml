@@ -16,7 +16,7 @@ steps:
     type: build
     working_directory: ${{clone}}
     arguments:
-      image_name: odoo
+      image_name: bitnami/odoo
       tag: '${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
       dockerfile: Dockerfile
     stage: package
@@ -28,5 +28,7 @@ steps:
     arguments:
       action: push
       chart_name: chart.yaml
+      release_nam: odoo
       helm_version: 3.0.2
       kube_context: 'cluster-1@devops'
+      namespace: odoo-prod
