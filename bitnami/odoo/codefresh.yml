@@ -1,0 +1,8 @@
+deploy:
+  type: helm
+  arguments:
+    action: install
+    chart_name: test_chart
+    release_name: first
+    helm_version: 3.0.1
+    kube_context: my-kubernetes-context
