@@ -1,0 +1,9 @@
+deploy:
+  type: helm
+  arguments:
+    action: install
+    chart_name: Chart.yaml
+    release_name: first
+    helm_version: 3.0.1
+    kube_context: cluster-1@devops
+    namespace: odoo-prod
