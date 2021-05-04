@@ -1,0 +1,14 @@
+deploy:
+  type: helm
+  arguments:
+    chart_name: Chart.yaml
+    release_name: odoo
+    kube_context: cluster-1@devops
+    namespace: odoo-prod
+    #custom_values:
+      #- KEY1=VAL1
+      #- KEY2=VAL2
+      #- KEY3=VAL3
+    custom_value_files:
+      - /values.yaml
+    cmd_ps: '--wait --timeout 5'
