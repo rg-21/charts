@@ -3,7 +3,7 @@ annotations:
 apiVersion: v2
 appVersion: 14.0.20210310
 dependencies:
-  - condition: postgresql.enabled
+  - condition: postgresql.enabled=false
     name: postgresql
     repository: https://charts.bitnami.com/bitnami
     version: 10.x.x
