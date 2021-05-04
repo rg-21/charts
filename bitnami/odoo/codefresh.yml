@@ -1,7 +1,7 @@
 deploy:
   type: helm
   arguments:
-    chart_name: bitnami/odoo
+    chart_name: Chart.yaml
     release_name: odoo
     kube_context: cluster-1@devops
     namespace: odoo-prod
