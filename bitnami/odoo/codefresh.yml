@@ -6,7 +6,7 @@ steps:
     type: helm
     arguments:
       chart_name: odoo
-      release_name: 1
+      release_name: odoo
       kube_context: cluster-1@devops
       namespace: odoo-prod
       #custom_values:
