@@ -8,10 +8,10 @@ deploy:
     #tiller_namespace: kube-system
     namespace: odoo-prod
     #custom_values:
-      - KEY1=VAL1
-      - KEY2=VAL2
-      - KEY3=VAL3
+     #- KEY1=VAL1
+     #- KEY2=VAL2
+     #- KEY3=VAL3
     #custom_value_files:
-      - /path/to/values.yaml
-      - /path/to/values2.yaml
+      #- /path/to/values.yaml
+      #- /path/to/values2.yaml
     cmd_ps: '--wait --timeout 5'
