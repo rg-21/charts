@@ -12,11 +12,11 @@ steps:
       revision: '${{CF_REVISION}}'
     stage: checkout
   BuildingDockerImage:
+    registry: docker.io
     title: Building Docker Image
     type: build
     working_directory: ${{clone}}
     arguments:
-      registry: docker.io
       image_name: bitnami/odoo
       tag: '${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
       dockerfile: Dockerfile
