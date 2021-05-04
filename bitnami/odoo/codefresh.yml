@@ -12,7 +12,6 @@ steps:
       revision: '${{CF_REVISION}}'
     stage: checkout
   BuildingDockerImage:
-    registry: docker.io
     title: Building Docker Image
     type: build
     working_directory: ${{clone}}
