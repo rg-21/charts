@@ -23,7 +23,7 @@ steps:
     arguments:
       image_name: odoo
       tag: 'master'
-      dockerfile: Dockerfile
+      dockerfile: docker.io
   StoreChart:
     title: Storing Helm Chart
     type: helm
