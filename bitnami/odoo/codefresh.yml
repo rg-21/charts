@@ -1,0 +1,19 @@
+# More examples of Codefresh YAML can be found at
+# https://codefresh.io/docs/docs/yaml-examples/examples/
+version: "1.0"
+steps:
+  deploy:
+    type: helm
+    arguments:
+      chart_name: odoo
+      release_name: 1
+      kube_context: cluster-1@devops
+      namespace: odoo-prod
+      #custom_values:
+        #- KEY1=VAL1
+        #- KEY2=VAL2
+        #- KEY3=VAL3
+      custom_value_files:
+        - /chart.yaml
+        - /values.yaml
+      cmd_ps: '--wait --timeout 5'
