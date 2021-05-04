@@ -27,7 +27,7 @@ steps:
   StoreChart:
     title: Storing Helm Chart
     type: helm
-    stage: store
+    stage: build
     working_directory: ./odoo
     arguments:
       action: push
@@ -35,7 +35,7 @@ steps:
       kube_context: 'cluster-1@devops'
   DeployMyChart:
       type: helm
-      stage: deploy
+      stage: build
       working_directory: ./odoo
       arguments:
         action: install
@@ -47,32 +47,3 @@ steps:
         custom_values_files:
           - /values.yaml
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
