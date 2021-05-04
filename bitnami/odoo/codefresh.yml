@@ -1,35 +1,77 @@
+
+
 version: '1.0'
 stages:
   - checkout
-  - package
-  - deploy  
+  - build
+  - test
 steps:
   clone:
     title: Cloning main repository...
+    stage: checkout
     type: git-clone
     arguments:
       repo: '${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}'
       revision: '${{CF_REVISION}}'
-    stage: checkout
-  BuildingDockerImage:
+      git: github  
+  MyAppDockerImage:
     title: Building Docker Image
+    stage: build
     type: build
-    working_directory: ${{clone}}
-    registry: docker.io
+    working_directory: '${{clone}}'
     arguments:
-      image_name: bitnami/odoo
-      tag: '${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
+      image_name: odoo
+      tag: 'master'
       dockerfile: Dockerfile
-    stage: package
-  deploy:
-    title: Storing Helm chart
+  StoreChart:
+    title: Storing Helm Chart
     type: helm
-    stage: deploy
+    stage: store
     working_directory: ./odoo
     arguments:
       action: push
-      chart_name: chart.yaml
-      release_nam: odoo
-      helm_version: 3.0.2
+      chart_name: charts/odoo
       kube_context: 'cluster-1@devops'
-      namespace: odoo-prod
+  DeployMyChart:
+      type: helm
+      stage: deploy
+      working_directory: ./odoo
+      arguments:
+        action: install
+        chart_name: charts/odoo
+        release_name: odoo1
+        helm_version: 3.0.2
+        kube_context: 'cluster-1@devops'
+        namespace: odoo-prod
+        custom_values_files:
+          - /values.yaml
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
