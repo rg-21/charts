@@ -5,4 +5,4 @@ deploy:
     chart_name: chart.yaml
     release_name: first
     helm_version: 3.0.1
-    kube_context: my-kubernetes-context
+    kube_context: cluster-1@devops
