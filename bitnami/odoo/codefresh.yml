@@ -13,7 +13,7 @@ steps:
         #- KEY1=VAL1
         #- KEY2=VAL2
         #- KEY3=VAL3
-      custom_value_files:
-        - /chart.yaml
-        - /values.yaml
+      #custom_value_files:
+        #- /chart.yaml
+        #- /values.yaml
       cmd_ps: '--wait --timeout 5'
