@@ -15,6 +15,7 @@ steps:
       revision: '${{CF_REVISION}}'
       git: github  
   MyAppDockerImage:
+    registry: docker.io
     title: Building Docker Image
     stage: build
     type: build
