@@ -16,7 +16,7 @@ steps:
     type: build
     working_directory: ${{clone}}
     arguments:
-      image_name: my-flask-app
+      image_name: odoo
       tag: '${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
       dockerfile: Dockerfile
     stage: package
@@ -24,9 +24,9 @@ steps:
     title: Storing Helm chart
     type: helm
     stage: deploy
-    working_directory: ./python-flask-sample-app
+    working_directory: ./odoo
     arguments:
       action: push
-      chart_name: charts/python
+      chart_name: chart.yaml
       helm_version: 3.0.2
-      kube_context: 'mydemoAkscluster@BizSpark Plus'
+      kube_context: 'cluster-1@devops'
