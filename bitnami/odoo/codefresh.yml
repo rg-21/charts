@@ -15,6 +15,7 @@ steps:
     title: Building Docker Image
     type: build
     working_directory: ${{clone}}
+    registry: docker.io
     arguments:
       image_name: bitnami/odoo
       tag: '${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
