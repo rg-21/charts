@@ -34,4 +34,17 @@ clone:
       helm_version: 3.0.2
       kube_context: "cluster-1@devops"
     stage: "deploy"
+    
+    
+    deploy:
+   type: "helm"
+   working_directory: "./react-article-display"
+   arguments:
+     action: "install"
+     chart_name: "charts/example-chart"
+     release_name: "example-chart"
+     helm_version: 3.0.2
+     kube_context: "anais-cluster@codefresh-sa"
+   stage: "deploy"
+    
    
